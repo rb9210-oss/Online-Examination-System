@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.onlineexam.controller.ExamController">
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #2c3e50; -fx-padding: 15;">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Online Examination">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="timerLabel" textFill="WHITE" style="-fx-background-color: #e74c3c; -fx-background-radius: 5; -fx-padding: 5 10;">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="questionCounterLabel" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: #ecf0f1; -fx-padding: 30;">
+         <children>
+            <VBox alignment="CENTER" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+               <children>
+                  <Label fx:id="questionText" textFill="#2c3e50" textAlignment="CENTER" wrapText="true" prefWidth="600.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            
+            <VBox alignment="CENTER" spacing="10.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+               <children>
+                  <RadioButton fx:id="optionA" mnemonicParsing="false" style="-fx-font-size: 14px;">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="answerGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="optionB" mnemonicParsing="false" style="-fx-font-size: 14px;" toggleGroup="$answerGroup" />
+                  <RadioButton fx:id="optionC" mnemonicParsing="false" style="-fx-font-size: 14px;" toggleGroup="$answerGroup" />
+                  <RadioButton fx:id="optionD" mnemonicParsing="false" style="-fx-font-size: 14px;" toggleGroup="$answerGroup" />
+               </children>
+            </VBox>
+            
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Button fx:id="previousButton" mnemonicParsing="false" onAction="#handlePrevious" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10 20;">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="nextButton" mnemonicParsing="false" onAction="#handleNext" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10 20;">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="submitButton" mnemonicParsing="false" onAction="#handleSubmit" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 5; -fx-padding: 10 20;">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            
+            <HBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Text fill="#7f8c8d" strokeType="OUTSIDE" strokeWidth="0.0" text="Progress:" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <ProgressBar fx:id="progressBar" prefWidth="300.0" progress="0.0" />
+                  <Label fx:id="progressLabel" textFill="#7f8c8d">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
